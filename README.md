@@ -1,89 +1,33 @@
 Margin Viewer for Annotator
 ==================
-##Margin viewer Annotator Plugin
+## Small modifications on view_annotator.js to support tags and tagsfilter.js
+---
+**The original repo of view_annotator.js**:
+https://github.com/albertjuhe/annotator_view
 
-view_annotator.js is a plugin for Annotator to view the current annotations in a panel in the right side.
+**Requirements**: 
++ jQuery
++ jQuery date format
++ jQuery slim scroll
++ AnnotatorJS
++ Select2
 
+**Changes I've done**:
++ Added tags in the list elements
++ Added a function that clears the list.
++ Set a function to be triggered on event "onTagsFilterCheck" that clears the list and populates it again with the resulting annotations after the filter. 
++ Changed the #annotations-panel a little bit to show counter of annotations and active tag filters
 
-##Installation
+**Notes**:
++ I do not support the categories plugin currently.
++ I've commented out the checkboxes "My annotations" and "Shared" because I have not checked yet how this works. It needs probably modification for it to work with the tags filter which is in the ToDo list. 
 
-To use the tool you need to install the [Annotator plugin](https://github.com/okfn/annotator/) to annotate text. 
+**Examples**:
 
+[Example 1](https://marios-r.github.io/annotator_view/docs/example1)
+<pre>
+</pre>
 
-```html
-    <script src="../lib/jquery-1.9.1.js"></script>
-    <script src="../lib/annotator-full.1.2.9/annotator-full.min.js"></script>
-    <!-- Locale for language -->
-    <script src="../lib/jquery-i18n-master/jquery.i18n.min.js"></script>
-    <!-- For show the annotation creation date -->
-    <script src="../lib/jquery.dateFormat.js"></script>
-    <!-- File with the translations -->
-    <script src="../locale/en/annotator.js"></script>
-    <!-- Scroll panel -->
-    <script src="../lib/jquery.slimscroll.js"></script>
-    <!-- annotator -->
-    <link rel="stylesheet" href="../lib/annotator-full.1.2.9/annotator.min.css">
-    <link rel="stylesheet" href="../src/css/style.css">
-    <!-- anotator plug in -->
-    <script src="../src/view_annotator.js"></script>
-    <script src="../src/categories.js"></script>
-    <script src="../lib/tinymce/tinymce.min.js"></script>
-    <script src="../src/richEditor.js"></script>
-    <script>
-      jQuery(function ($) {
-                   $.i18n.load(i18n_dict);
-               
-                    var annotator = $('body').annotator().annotator().data('annotator');
-                    var propietary = 'demoUser';
-                    annotator.addPlugin('Permissions', {
-                        user: propietary,
-                        permissions: {
-                            'read': [propietary],
-                            'update': [propietary],
-                            'delete': [propietary],
-                            'admin': [propietary]
-                     },
-                     showViewPermissionsCheckbox: true,
-                     showEditPermissionsCheckbox: false
-                    });
-                  $('body').annotator().annotator('addPlugin', 'RichEditor');
-                  $('body').annotator().annotator('addPlugin', 'Categories',{
-                           errata:'annotator-hl-errata',
-                           destacat:'annotator-hl-destacat',
-                           subratllat:'annotator-hl-subratllat' }
-                     );
-                  $('body').annotator().annotator('addPlugin', 'AnnotatorViewer');
-                  //Annotation scroll
-                  $('#anotacions-uoc-panel').slimscroll({height: '100%'});
-               });
-  </script>
-```
-##Usage
-
-The annotations that you create are displayed in the panel. You can delete an anotation, you can acces at the point of text that has been anotated, open an annotation, close an annotation, toggle the panel, scroll the panel if there are several annotations and a little label where you can view how many annotations are currently.
-
-You can filters annotations: My annotations and shared annotations.
-
-#Release 1.10
-- Edit text annotation in the panel.
-
-#Release 1.12
-- Edit text annotation panel with tinymce
-
-##Development
-
-The view annoator plugin, use the property categorize, to change the annotation color category (default value highligth, defined in the css), and an order property to sort the annotations in the panel.
-Each annotation in the right panel needs a unique Id, annotator when use a back end, a unique Id is assigned to each annotation after creation, but in the Viewer panel offline I don have this Id, for this reason  we generate the unique Id with a function uniqueId() in the plugin.
-
-Experimenting with a Full Text Search using lunr.js, new plug-in called searh.js that uses this library with the panel viewer to serach inside the annotations.
-
-##Offline Demo
-- Demo in demo/anotacions.html
-- Demo in demo_tinymce/annotation.html
-- Demo in demo_search/annotations.html
-
-##Online Demo
-Complete functional demo with MySQL Backend and developed in nodejs
-[Demo Frankenstein](http://ec2-35-164-12-68.us-west-2.compute.amazonaws.com:3060/annotation/mary/demo.html) with [https://github.com/albertjuhe/annotator_nodejs_store] (https://github.com/albertjuhe/annotator_nodejs_store)
-
-The panel in this demo is little different, in the red square you can see How many people is reading the document.
+[Example 2](https://marios-r.github.io/annotator_view/docs/example2)
+<pre>
+</pre>

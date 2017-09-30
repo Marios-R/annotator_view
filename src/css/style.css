@@ -226,7 +226,7 @@ body {
         background-color: #fbed20;
 }
 
-.annotator-marginviewer-text, .annotator-marginviewer-date {
+.annotator-marginviewer-text, .annotator-marginviewer-date,.annotator-marginviewer-tags {
     border-bottom: 1px solid #cccccc;
     background-color: #f5f5f5;
     padding: 0.5em;
@@ -259,7 +259,7 @@ body {
 
 .annotator-marginviewer-highlighted>.annotator-marginviewer-text {
 }
-.annotator-marginviewer-selected>.annotator-marginviewer-text {
+.annotator-marginviewer-selected>.annotator-marginviewer-text,.annotator-marginviewer-tags {
     /* Mozilla: */
     background: -moz-linear-gradient(top, #fef8cd, #f6edb5);
     /* Chrome, Safari:*/
@@ -270,7 +270,7 @@ body {
                 StartColorStr='#fef8cd', EndColorStr='#f6edb5', GradientType=0);
 }
 
-.annotator-panel-save, .annotator-panel-cancel, .annotator-panel-reset {
+.annotator-panel-save, .annotator-panel-cancel, .annotator-panel-reset,.annotator-panel-create, .annotator-panel-all {
     position: relative;
     display: inline-block;
     padding: 0 12px 0 12px;
@@ -284,6 +284,28 @@ body {
     background-color: #d4d4d4;
     border-radius: 5px;
     margin-right: 3px;
+}
+
+a.annotator-panel-save::after {
+    background-position: 0 -120px
+}
+a.annotator-panel-save:hover::after,
+a.annotator-panel-save:focus::after,
+a.annotator-panel-save.annotator-focus::after {
+    margin-top: -8px;
+    background-position: 0 -135px
+}
+
+.annotator-panel-create:hover,.annotator-panel-all:hover {
+	outline: 0;
+    border-color: #435aa0;
+    background-color: #3865f9;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#7691fb),color-stop(0.5,#5075fb),color-stop(0.5,#3865f9),to(#3665fa));
+    background-image: -moz-linear-gradient(to bottom,#7691fb,#5075fb 50%,#3865f9 50%,#3665fa);
+    background-image: -webkit-linear-gradient(to bottom,#7691fb,#5075fb 50%,#3865f9 50%,#3665fa);
+    background-image: linear-gradient(to bottom,#7691fb,#5075fb 50%,#3865f9 50%,#3665fa);
+    color: #fff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.42);
 }
 /*
     =======================================
