@@ -26,57 +26,57 @@ https://github.com/albertjuhe/annotator_view
 
 [Example 1](https://marios-r.github.io/annotator_view/example1)
 <pre>
-                jQuery(function ($) {
-					// Customise the default plugin options with the third argument.
-                    var annotator = $('body').annotator().annotator().data('annotator');
-                    var propietary = 'demoUser';
-                    annotator.addPlugin('Permissions', {
-                        user: propietary,
-                        permissions: {
-                            'read': [propietary],
-                            'update': [propietary],
-                            'delete': [propietary],
-                            'admin': [propietary]
-                        },
-                        showViewPermissionsCheckbox: true,
-                        showEditPermissionsCheckbox: false
-                    });
-					$('body').annotator().annotator('addPlugin', 'Tags');
-					$('body').annotator().annotator('addPlugin', 'AnnotatorViewer');
-					$('body').annotator().annotator('addPlugin', 'TagsFilter',{element:'.container-anotacions',width:'180px'});
-                  
-					$('body').annotator().annotator("addPlugin", "Touch");
-                
-					//Annotation scroll
-					$('#anotacions-uoc-panel').slimscroll({height: '100%'});
-				});
+jQuery(function ($) {
+	// Customise the default plugin options with the third argument.
+	var annotator = $('body').annotator().annotator().data('annotator');
+	var propietary = 'demoUser';
+	annotator.addPlugin('Permissions', {
+		user: propietary,
+		permissions: {
+			'read': [propietary],
+			'update': [propietary],
+			'delete': [propietary],
+			'admin': [propietary]
+		},
+		showViewPermissionsCheckbox: true,
+		showEditPermissionsCheckbox: false
+	});
+	$('body').annotator().annotator('addPlugin', 'Tags');
+	$('body').annotator().annotator('addPlugin', 'AnnotatorViewer');
+	$('body').annotator().annotator('addPlugin', 'TagsFilter',{element:'.container-anotacions',width:'180px'});
+  
+	$('body').annotator().annotator("addPlugin", "Touch");
+
+	//Annotation scroll
+	$('#anotacions-uoc-panel').slimscroll({height: '100%'});
+});
 </pre>
 
 [Example 2](https://marios-r.github.io/annotator_view/example2)
 <pre>
-                jQuery(function ($) {
-					// Customise the default plugin options with the third argument.
-                    var annotator = $('body').annotator().annotator().data('annotator');
-                    var propietary = 'demoUser';
-                    annotator.addPlugin('Permissions', {
-                        user: propietary,
-                        permissions: {
-                            'read': [propietary],
-                            'update': [propietary],
-                            'delete': [propietary],
-                            'admin': [propietary]
-                        },
-                        showViewPermissionsCheckbox: true,
-                        showEditPermissionsCheckbox: false
-                    });
-					$('body').annotator().annotator('addPlugin', 'RichEditor');
-					$('body').annotator().annotator('addPlugin', 'Tags');
-					$('body').annotator().annotator('addPlugin', 'AnnotatorViewer');
-					$('body').annotator().annotator('addPlugin', 'TagsFilter',{element:'.container-anotacions',width:'180px'});
-                  
-					$('body').annotator().annotator("addPlugin", "Touch");
-                
-					//Annotation scroll
-					$('#anotacions-uoc-panel').slimscroll({height: '100%'});
-				});
+jQuery(function ($) {
+	// Customise the default plugin options with the third argument.
+	var annotator = $('body').annotator().annotator().data('annotator');
+	var propietary = 'demoUser';
+	annotator.addPlugin('Permissions', {
+		user: propietary,
+		permissions: {
+			'read': [propietary],
+			'update': [propietary],
+			'delete': [propietary],
+			'admin': [propietary]
+		},
+		showViewPermissionsCheckbox: true,
+		showEditPermissionsCheckbox: false
+	});
+	$('body').annotator().annotator('addPlugin', 'RichEditor');
+	$('body').annotator().annotator('addPlugin', 'Tags');
+	$('body').annotator().annotator('addPlugin', 'AnnotatorViewer');
+	$('body').annotator().annotator('addPlugin', 'TagsFilter',{element:'.container-anotacions',width:'180px'});
+  
+	$('body').annotator().annotator("addPlugin", "Touch");
+
+	//Annotation scroll
+	$('#anotacions-uoc-panel').slimscroll({height: '100%'});
+});
 </pre>
